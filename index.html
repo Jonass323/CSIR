@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSIR</title>
+
+  <!-- Ícono de pestaña -->
+  <link rel="icon" href="IMG/LOGO PRINCIPAL.png" type="image/png">
+
+  <!-- 📌 CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- PANTALLA PRINCIPAL -->
+  <div id="pantalla-principal">
+    <header>
+      <img src="IMG/LOGO PRINCIPAL.png" alt="Fundavita Logo">
+    </header>
+
+    <div class="logo-central">
+      <img src="IMG/LOGO BLANCO Y NEGRO-03.png" alt="Logo Central">
+    </div>
+
+    <div class="sorteo-box">
+      <p>Cargá la lista de participantes (.txt, .csv o .xlsx) o escribila abajo:</p>
+
+      <!-- 📄 Input de archivo -->
+      <input type="file" id="archivo" accept=".txt,.csv,.xlsx,.xls">
+
+      <!-- ✏ Área de texto -->
+      <textarea id="lista" placeholder="Escribí los nombres, uno por línea..."></textarea>
+      <button onclick="cargarManual()">Cargar desde texto</button>
+
+      <p id="cantidad">Participantes cargados: 0</p>
+      <hr>
+
+      <!-- ⏳ Cuenta regresiva -->
+      <label>Segundos para la cuenta regresiva:</label>
+      <input type="number" id="tiempo" value="5" min="3" max="60"><br><br>
+
+      <!-- 🎉 BOTÓN DE SORTEO (con 'this') -->
+      <button class="btn-sorteo" onclick="iniciarCuentaRegresiva(this)">🎉 Sortear Ganador</button>
+
+      <!-- 🖥 FULL SCREEN -->
+      <button onclick="toggleFullScreen()">🖥 Pantalla Completa</button>
+
+      <!-- 📋 Lista renderizada -->
+      <div id="lista-participantes"></div>
+    </div>
+  </div>
+
+  <!-- 🕒 PANTALLA CUENTA con fondo de imagen -->
+  <div id="pantalla-cuenta" class="oculto" style="background-image: url('IMG/fondo-contador.jpg'); background-size: cover; background-position: center;">
+    <div id="contador"></div>
+  </div>
+
+  <!-- 🏆 PANTALLA GANADOR -->
+  <div id="pantalla-ganador" class="oculto">
+    <h2>🏆 EL GANADOR ES 🏆</h2>
+    <div id="nombre-ganador"></div>
+    <button onclick="volverInicio()">🔁 Volver al sorteo</button>
+  </div>
+
+  <!-- 🎉 Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+
+  <!-- 📄 XLSX PARA LEER EXCEL -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- 📌 Script principal -->
+  <script src="script.js"></script>
+
+</body>
+</html>
