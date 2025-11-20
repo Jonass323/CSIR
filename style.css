@@ -1,7 +1,7 @@
 /* 🔵⚪ Fondo general */
 body {
   margin: 0;
-  background-image: url(IMG/background.jpg);
+  background-image: url(IMG/PANTALLAS.webp);
   background-size: cover;
   background-position: center;
   font-family: "Poppins", sans-serif;
@@ -14,14 +14,15 @@ header {
   width: 100%;
   background-color: #001547;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 40px;
-  border-bottom: 4px solid white;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
+  padding: 10px 0;         /* quita el padding lateral */
 }
+
 
 header img {
   height: 160px;
+   align-items: center;
 }
 
 /* 🏟 Logo Centro */
